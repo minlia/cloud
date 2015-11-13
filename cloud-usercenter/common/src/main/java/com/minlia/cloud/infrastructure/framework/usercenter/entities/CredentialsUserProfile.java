@@ -1,4 +1,4 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.domain;
+package com.minlia.cloud.infrastructure.framework.usercenter.entities;
 
 
 import java.util.Arrays;

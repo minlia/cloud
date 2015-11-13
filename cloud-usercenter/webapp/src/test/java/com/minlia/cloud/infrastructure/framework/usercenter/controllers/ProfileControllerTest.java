@@ -4,7 +4,7 @@ package com.minlia.cloud.infrastructure.framework.usercenter.controllers;
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.CredentialsUserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.CredentialsUserProfile;
 import com.minlia.cloud.infrastructure.framework.usercenter.rest.RestConstants;
 import com.minlia.cloud.infrastructure.framework.usercenter.test.AbstractIntegrationTest;
 import com.jayway.restassured.RestAssured;

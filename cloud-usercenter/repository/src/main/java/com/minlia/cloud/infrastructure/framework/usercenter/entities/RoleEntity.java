@@ -1,6 +1,5 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.entities;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.Role;
 import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.Column;

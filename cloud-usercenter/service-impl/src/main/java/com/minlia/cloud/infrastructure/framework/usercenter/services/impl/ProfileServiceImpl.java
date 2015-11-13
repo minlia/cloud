@@ -1,15 +1,15 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.services.impl;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.CredentialsUserProfile;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.UserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.constants.ServiceConstants;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.CredentialsUserProfile;
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.RoleEntity;
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserEntity;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;
+import com.minlia.cloud.infrastructure.framework.usercenter.exception.LogicException;
 import com.minlia.cloud.infrastructure.framework.usercenter.repositories.RoleRepository;
 import com.minlia.cloud.infrastructure.framework.usercenter.repositories.UserRepository;
-import com.minlia.cloud.infrastructure.framework.usercenter.services.LogicException;
 import com.minlia.cloud.infrastructure.framework.usercenter.services.ProfileService;
-import com.minlia.cloud.infrastructure.framework.usercenter.services.ServiceConstants;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

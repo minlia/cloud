@@ -1,6 +1,6 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.services.impl;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.AuthorizableUserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.AuthorizableUserProfile;
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserEntity;
 import com.minlia.cloud.infrastructure.framework.usercenter.repositories.UserRepository;
 import com.minlia.cloud.infrastructure.framework.usercenter.services.UserService;

@@ -1,4 +1,4 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.services;
+package com.minlia.cloud.infrastructure.framework.usercenter.exception;
 
 
 import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;

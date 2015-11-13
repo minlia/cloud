@@ -1,8 +1,8 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.services;
 
 import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.CredentialsUserProfile;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.UserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.CredentialsUserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserProfile;
 
 import javax.servlet.http.HttpServletRequest;
 

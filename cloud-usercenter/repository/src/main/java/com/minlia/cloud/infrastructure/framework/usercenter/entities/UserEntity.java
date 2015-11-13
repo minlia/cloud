@@ -1,8 +1,5 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.entities;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.AuthorizableUserProfile;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.Role;
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.UserProfile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 

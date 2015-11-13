@@ -1,8 +1,8 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.services;
+package com.minlia.cloud.infrastructure.framework.usercenter.constants;
 
 
 
-import com.minlia.cloud.infrastructure.framework.usercenter.domain.Role;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.Role;
 
 import java.util.Collections;
 import java.util.List;
