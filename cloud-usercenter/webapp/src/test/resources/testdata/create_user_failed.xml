@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <USER
+            USERNAME="admin"/>
+
+    <ROLE
+            ROLE_NAME="ADMIN"/>
+    <ROLE
+            ROLE_NAME="USER"/>
+
+</dataset>

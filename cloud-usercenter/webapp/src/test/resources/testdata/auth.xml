@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <OAUTH_CLIENT_DETAILS
+            CLIENT_ID="boot_webapp"
+            CLIENT_SECRET="$2a$10$LCNswZlwBgyQAvNqgj35C.DuFIm4LVghVKkjS.Gyt5o8ukFHEUaMu"
+            AUTHORITIES="ROLE_TRUSTED_CLIENT"
+            AUTHORIZED_GRANT_TYPES="password,refresh_token"
+            RESOURCE_IDS="api"
+            SCOPE="read,write"/>
+
+    <USER
+            ID="9a820f3e-1b4a-45aa-b709-cda7957b1a75"
+            USERNAME="admin"
+            EMAIL="admin@admin.com"
+            PASSWORD="$2a$10$D85xZKQe7AKfUWwL4altkOeYMSK/wf/eisYM7oAQoW6c42WCXlZta"/>
+
+    <ROLE
+            ID="dc93f50a-5ac7-46ae-91cf-b0d3a4d5adc5"
+            ROLE_NAME="ADMIN"/>
+
+    <ROLE
+            ID="40dc4244-c8f3-4960-9efe-03537858e84b"
+            ROLE_NAME="USER"/>
+
+    <USER_ROLE
+            USER_ID="9a820f3e-1b4a-45aa-b709-cda7957b1a75"
+            ROLE_ID="dc93f50a-5ac7-46ae-91cf-b0d3a4d5adc5"/>
+
+    <USER_ROLE
+            USER_ID="9a820f3e-1b4a-45aa-b709-cda7957b1a75"
+            ROLE_ID="40dc4244-c8f3-4960-9efe-03537858e84b"/>
+
+</dataset>

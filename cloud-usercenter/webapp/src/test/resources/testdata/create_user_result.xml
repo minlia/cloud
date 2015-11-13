@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+    <USER
+            USERNAME="admin"
+            EMAIL="admin@admin.com"/>
+    <USER
+            USERNAME="testUser"
+            EMAIL="testUser@test.com"/>
+
+    <ROLE
+            ROLE_NAME="ADMIN"/>
+
+    <ROLE
+            ROLE_NAME="USER"/>
+
+    <!--<USER_ROLE-->
+            <!--USER_ID="9a820f3e-1b4a-45aa-b709-cda7957b1a75"-->
+            <!--ROLE_ID="dc93f50a-5ac7-46ae-91cf-b0d3a4d5adc5"/>-->
+
+</dataset>

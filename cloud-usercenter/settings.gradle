@@ -1,0 +1,6 @@
+include 'common'
+include 'repository'
+include 'service-api'
+include 'service-impl'
+include 'rest-api'
+include 'webapp'
