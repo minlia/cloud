@@ -1,13 +1,13 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.controllers;
+package com.minlia.cloud.infrastructure.framework.usercenter.rest.endpoints;
 
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
 import com.github.springtestdbunit.annotation.ExpectedDatabase;
 import com.github.springtestdbunit.assertion.DatabaseAssertionMode;
-import com.minlia.cloud.infrastructure.framework.usercenter.entities.CredentialsUserProfile;
-import com.minlia.cloud.infrastructure.framework.usercenter.rest.RestConstants;
-import com.minlia.cloud.infrastructure.framework.usercenter.test.AbstractIntegrationTest;
 import com.jayway.restassured.RestAssured;
+import com.minlia.cloud.infrastructure.framework.usercenter.constants.ApiConstants;
+import com.minlia.cloud.infrastructure.framework.usercenter.entities.CredentialsUserProfile;
+import com.minlia.cloud.infrastructure.framework.usercenter.test.AbstractIntegrationTest;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -34,7 +34,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -61,7 +61,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -79,7 +79,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -97,7 +97,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -115,7 +115,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -133,7 +133,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6NTlkMTRmMDEtMzhkYS00MDFjLTgwMTQtYjZjMDM1NjI3MWM4")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -150,7 +150,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
         given()
                 .header("Content-Type", "application/json")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()
@@ -168,7 +168,7 @@ public class ProfileControllerTest extends AbstractIntegrationTest {
                 .header("Content-Type", "application/json")
                 .header("Authorization", "Basic Ym9vdF93ZWJhcHA6d3JvbmdQYXNzd29yZA==")
                 .body(profile)
-                .post(RestConstants.API_PREFIX + "/profile")
+                .post(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .log()
                 .all()

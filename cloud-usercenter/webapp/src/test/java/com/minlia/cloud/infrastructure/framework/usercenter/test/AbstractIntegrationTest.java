@@ -1,7 +1,7 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.test;
 
 import com.github.springtestdbunit.DbUnitTestExecutionListener;
-import com.minlia.cloud.infrastructure.framework.usercenter.Application;
+import com.minlia.cloud.infrastructure.framework.usercenter.UserCenterApplication;
 import com.jayway.restassured.response.ResponseBodyExtractionOptions;
 import org.junit.Rule;
 import org.junit.rules.TestRule;
@@ -23,7 +23,7 @@ import static com.jayway.restassured.RestAssured.given;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = UserCenterApplication.class)
 @WebIntegrationTest(randomPort = true)
 @TestPropertySource(locations="classpath:test.properties")
 @TestExecutionListeners({

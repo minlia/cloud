@@ -5,8 +5,8 @@ import com.minlia.cloud.infrastructure.framework.usercenter.entities.Credentials
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.RoleEntity;
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserEntity;
 import com.minlia.cloud.infrastructure.framework.usercenter.entities.UserProfile;
-import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;
-import com.minlia.cloud.infrastructure.framework.usercenter.exception.LogicException;
+import com.minlia.cloud.infrastructure.framework.usercenter.exceptions.UserCenterException;
+import com.minlia.cloud.infrastructure.framework.usercenter.exceptions.RestServiceException;
 import com.minlia.cloud.infrastructure.framework.usercenter.repositories.RoleRepository;
 import com.minlia.cloud.infrastructure.framework.usercenter.repositories.UserRepository;
 import com.minlia.cloud.infrastructure.framework.usercenter.services.ProfileService;
@@ -59,17 +59,17 @@ public class ProfileServiceImpl implements ProfileService {
 
 
     @Override
-    public UserProfile getOwnProfile() throws LogicException {
+    public UserProfile getOwnProfile() throws RestServiceException {
         Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
 
         if (currentUser == null) {
-            throw new LogicException(HttpStatus.UNAUTHORIZED, "No authentication information found. Are you logged in?");
+            throw new RestServiceException(HttpStatus.UNAUTHORIZED, "No authentication information found. Are you logged in?");
         }
 
         UserEntity userEntity = userRepository.findByUsername(currentUser.getName());
         if (userEntity == null) {
             // This would indicate bad coding somewhere
-            throw new LogicException(HttpStatus.INTERNAL_SERVER_ERROR, "Authenticated user " + currentUser.getName() +
+            throw new RestServiceException(HttpStatus.INTERNAL_SERVER_ERROR, "Authenticated user " + currentUser.getName() +
                     " not found in database");
         }
 
@@ -78,33 +78,33 @@ public class ProfileServiceImpl implements ProfileService {
 
 
     @Override
-    public void register(CredentialsUserProfile profile, HttpServletRequest request) throws LogicException {
+    public void register(CredentialsUserProfile profile, HttpServletRequest request) throws RestServiceException {
 
         if (profile.getUsername() == null || profile.getUsername().isEmpty()) {
-            throw new LogicException(HttpStatus.BAD_REQUEST, "Missing username");
+            throw new RestServiceException(HttpStatus.BAD_REQUEST, "Missing username");
         }
 
         if (profile.getEmail() == null || profile.getEmail().isEmpty()) {
-            throw new LogicException(HttpStatus.BAD_REQUEST, "Missing email");
+            throw new RestServiceException(HttpStatus.BAD_REQUEST, "Missing email");
         }
 
         if (!profile.getEmail().matches(".+@.+\\..+")) {
-            throw new LogicException(HttpStatus.BAD_REQUEST, "Invalid email format: " + profile.getEmail());
+            throw new RestServiceException(HttpStatus.BAD_REQUEST, "Invalid email format: " + profile.getEmail());
         }
 
         if (!isValidClient(request)) {
-            throw new LogicException(HttpStatus.UNAUTHORIZED, "Invalid client credentials");
+            throw new RestServiceException(HttpStatus.UNAUTHORIZED, "Invalid client credentials");
         }
 
         UserEntity userEntity = userRepository.findByUsername(profile.getUsername());
         if (userEntity != null) {
-            throw new LogicException(HttpStatus.BAD_REQUEST, "User " + profile.getUsername() +
+            throw new RestServiceException(HttpStatus.BAD_REQUEST, "User " + profile.getUsername() +
                     " already exists");
         }
 
         userEntity = userRepository.findByEmail(profile.getEmail());
         if (userEntity != null) {
-            throw new LogicException(HttpStatus.BAD_REQUEST, "Email " + profile.getEmail() +
+            throw new RestServiceException(HttpStatus.BAD_REQUEST, "Email " + profile.getEmail() +
                     " already exists with another user");
         }
 
@@ -180,10 +180,10 @@ public class ProfileServiceImpl implements ProfileService {
 
 
     @Override
-    public void changePassword(char[] newPassword) throws BootException {
+    public void changePassword(char[] newPassword) throws UserCenterException {
         Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
         if (currentUser == null) {
-            throw new LogicException(HttpStatus.UNAUTHORIZED, "Attempt to change password for a non authenticated user");
+            throw new RestServiceException(HttpStatus.UNAUTHORIZED, "Attempt to change password for a non authenticated user");
         }
 
         changePassword(currentUser, newPassword);
@@ -191,28 +191,28 @@ public class ProfileServiceImpl implements ProfileService {
 
 
     @Override
-    public void changePassword(char[] oldPassword, char[] newPassword) throws BootException {
+    public void changePassword(char[] oldPassword, char[] newPassword) throws UserCenterException {
         Authentication currentUser = SecurityContextHolder.getContext().getAuthentication();
         if (currentUser == null) {
-            throw new LogicException(HttpStatus.UNAUTHORIZED, "Attempt to change password for a non authenticated user");
+            throw new RestServiceException(HttpStatus.UNAUTHORIZED, "Attempt to change password for a non authenticated user");
         }
 
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(currentUser.getName(),
                     new String(oldPassword)));
         } catch(AuthenticationException exception) {
-            throw new LogicException(HttpStatus.UNAUTHORIZED, "Wrong password", exception);
+            throw new RestServiceException(HttpStatus.UNAUTHORIZED, "Wrong password", exception);
         }
 
         changePassword(currentUser, newPassword);
     }
 
 
-    private void changePassword(Authentication currentUser, char[] newPassword) throws BootException {
+    private void changePassword(Authentication currentUser, char[] newPassword) throws UserCenterException {
         UserEntity userEntity = userRepository.findByUsername(currentUser.getName());
         if (userEntity == null) {
             // This would indicate bad coding somewhere
-            throw new LogicException(HttpStatus.INTERNAL_SERVER_ERROR, "Authenticated user " + currentUser.getName() +
+            throw new RestServiceException(HttpStatus.INTERNAL_SERVER_ERROR, "Authenticated user " + currentUser.getName() +
                     " not found in database");
         }
 

@@ -1,7 +1,7 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.rest.controllers;
+package com.minlia.cloud.infrastructure.framework.usercenter.rest.endpoints;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.services.LogicException;
-import com.minlia.cloud.infrastructure.framework.usercenter.rest.ExceptionInfo;
+import com.minlia.cloud.infrastructure.framework.usercenter.beans.ExceptionInfo;
+import com.minlia.cloud.infrastructure.framework.usercenter.exceptions.RestServiceException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -17,10 +17,10 @@ public class ExceptionAdvice {
 
     private static final Logger LOG = LoggerFactory.getLogger(ExceptionAdvice.class);
 
-    @ExceptionHandler(value = LogicException.class)
+    @ExceptionHandler(value = RestServiceException.class)
     public
     @ResponseBody
-    ExceptionInfo handleBootException(LogicException exception, HttpServletRequest request,
+    ExceptionInfo handleBootException(RestServiceException exception, HttpServletRequest request,
                                       HttpServletResponse response) {
         LOG.error(exception.getMessage(), exception);
         response.setStatus(exception.getHttpStatusResponse().value());

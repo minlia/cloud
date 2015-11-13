@@ -1,4 +1,4 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.rest;
+package com.minlia.cloud.infrastructure.framework.usercenter.beans;
 
 
 public class ExceptionInfo {

@@ -1,6 +1,6 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.config;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.rest.RestConstants;
+import com.minlia.cloud.infrastructure.framework.usercenter.constants.ApiConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
@@ -107,25 +107,25 @@ public class OAuth2Configuration {
         @Override
         public void configure(ResourceServerSecurityConfigurer resources) {
             resources
-                    .resourceId(RestConstants.API_RESOURCE_ID);
+                    .resourceId(ApiConstants.API_RESOURCE_ID);
         }
 
         @Override
         public void configure(HttpSecurity http) throws Exception {
             http
                     .authorizeRequests()
-                    .antMatchers(RestConstants.API_PREFIX + "/user/**").hasRole("ADMIN");
+                    .antMatchers(ApiConstants.API_PREFIX + "/user/**").hasRole("ADMIN");
 
             // No user authentication needed for new users registering themselves, but manual client
             // validation is needed (see ProfileService.register)
             http
                     .authorizeRequests()
-                    .antMatchers(HttpMethod.POST, RestConstants.API_PREFIX + "/profile").anonymous();
+                    .antMatchers(HttpMethod.POST, ApiConstants.API_PREFIX + "/profile").anonymous();
 
             // Any other usage of /profile endpoint needs the user to be authenticated
             http
                     .authorizeRequests()
-                    .antMatchers(RestConstants.API_PREFIX + "/profile/**").authenticated();
+                    .antMatchers(ApiConstants.API_PREFIX + "/profile/**").authenticated();
 
         }
 

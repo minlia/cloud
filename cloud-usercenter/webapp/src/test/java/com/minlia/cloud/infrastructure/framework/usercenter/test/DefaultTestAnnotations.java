@@ -1,6 +1,6 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.test;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.Application;
+import com.minlia.cloud.infrastructure.framework.usercenter.UserCenterApplication;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.TYPE)
 @RunWith(SpringJUnit4ClassRunner.class)
-@SpringApplicationConfiguration(classes = Application.class)
+@SpringApplicationConfiguration(classes = UserCenterApplication.class)
 @WebIntegrationTest(randomPort = true)
 @TestPropertySource(locations="classpath:test.properties")
 public @interface DefaultTestAnnotations { }

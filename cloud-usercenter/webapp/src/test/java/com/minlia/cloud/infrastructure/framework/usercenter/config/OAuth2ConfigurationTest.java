@@ -2,16 +2,16 @@ package com.minlia.cloud.infrastructure.framework.usercenter.config;
 
 
 import com.github.springtestdbunit.annotation.DatabaseSetup;
-import com.minlia.cloud.infrastructure.framework.usercenter.rest.RestConstants;
-import com.minlia.cloud.infrastructure.framework.usercenter.test.AbstractIntegrationTest;
 import com.jayway.restassured.RestAssured;
 import com.jayway.restassured.response.ResponseBodyExtractionOptions;
+import com.minlia.cloud.infrastructure.framework.usercenter.constants.ApiConstants;
+import com.minlia.cloud.infrastructure.framework.usercenter.test.AbstractIntegrationTest;
 import org.junit.Before;
 import org.junit.Test;
 
-
-import static com.jayway.restassured.RestAssured.*;
-import static org.junit.Assert.*;
+import static com.jayway.restassured.RestAssured.given;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 
 @DatabaseSetup("classpath:testdata/auth.xml")
@@ -30,7 +30,7 @@ public class OAuth2ConfigurationTest extends AbstractIntegrationTest {
     public void accessForbiddenToProtectedResource() {
         given()
                 .queryParam("currentUser", true)
-                .get(RestConstants.API_PREFIX + "/user")
+                .get(ApiConstants.API_PREFIX + "/user")
                 .then()
                 .statusCode(401);
     }
@@ -101,7 +101,7 @@ public class OAuth2ConfigurationTest extends AbstractIntegrationTest {
         given()
                 .header("Authorization", "Bearer " + accessToken)
                 .queryParam("currentUser", true)
-                .get(RestConstants.API_PREFIX + "/profile")
+                .get(ApiConstants.API_PREFIX + "/profile")
                 .then()
                 .statusCode(200)
                 .extract().body();
@@ -122,7 +122,7 @@ public class OAuth2ConfigurationTest extends AbstractIntegrationTest {
                 .formParam("oldPassword", "admin")
                 .formParam("newPassword", newPassword)
                 .header("Authorization", "Bearer " + accessToken)
-                .post(RestConstants.API_PREFIX + "/profile/password")
+                .post(ApiConstants.API_PREFIX + "/profile/password")
                 .then()
                 .log()
                 .all()

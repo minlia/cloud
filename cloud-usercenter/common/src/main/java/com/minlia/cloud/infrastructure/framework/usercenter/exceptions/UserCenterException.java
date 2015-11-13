@@ -1,18 +1,18 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.exception;
+package com.minlia.cloud.infrastructure.framework.usercenter.exceptions;
 
 
 import org.springframework.http.HttpStatus;
 
-public class BootException extends Exception {
+public class UserCenterException extends Exception {
 
     private HttpStatus httpStatusResponse;
 
-    public BootException(HttpStatus httpStatusResponse, String message) {
+    public UserCenterException(HttpStatus httpStatusResponse, String message) {
         super(message);
         this.httpStatusResponse = httpStatusResponse;
     }
 
-    public BootException(HttpStatus httpStatusResponse, String message, Throwable cause) {
+    public UserCenterException(HttpStatus httpStatusResponse, String message, Throwable cause) {
         super(message, cause);
         this.httpStatusResponse = httpStatusResponse;
     }

@@ -1,8 +1,8 @@
-package com.minlia.cloud.infrastructure.framework.usercenter.rest;
+package com.minlia.cloud.infrastructure.framework.usercenter.constants;
 
-public abstract class RestConstants {
+public abstract class ApiConstants {
 
-    private RestConstants() { /* no instances allowed */ }
+    private ApiConstants() { /* no instances allowed */ }
 
     public static final String API_VERSION = "1.0";
     public static final String API_RESOURCE_ID = "api";

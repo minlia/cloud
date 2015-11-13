@@ -1,7 +1,7 @@
 package com.minlia.cloud.infrastructure.framework.usercenter.rest.interceptors;
 
-import com.minlia.cloud.infrastructure.framework.usercenter.exception.BootException;
-import com.minlia.cloud.infrastructure.framework.usercenter.exception.ThrottlingException;
+import com.minlia.cloud.infrastructure.framework.usercenter.exceptions.UserCenterException;
+import com.minlia.cloud.infrastructure.framework.usercenter.exceptions.ThrottlingException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.Authentication;
@@ -46,7 +46,7 @@ public class ThrottlingInterceptor implements HandlerInterceptor {
         } else if (principal instanceof UserDetails) {
             username = ((UserDetails) principal).getUsername();
         } else {
-            throw new BootException(HttpStatus.INTERNAL_SERVER_ERROR, "Unknown principal instance: " + principal.getClass());
+            throw new UserCenterException(HttpStatus.INTERNAL_SERVER_ERROR, "Unknown principal instance: " + principal.getClass());
         }
 
         String requestURI = request.getRequestURI();
