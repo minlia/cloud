@@ -1,6 +1,6 @@
 # minlia cloud
 
-Just another open source micro-service modern style architecture and solid software framework
+Just another open source micro-service modern style distribution architecture and solid software framework
 A spring full stack based system architecture, powered by spring boot, spring cloud,spring data, spring data jpa etc.
 
 
@@ -8,7 +8,7 @@ A spring full stack based system architecture, powered by spring boot, spring cl
 
 # 敏捷、便利、优雅 minlia cloud
 
-一个为微服务架构而生的，敏捷、便利、优雅的基础架构及框架。
+一个为微服务架构而生的，敏捷、便利、优雅的分布式基础架构及框架。
 基于spring全栈式架构。由spring boot、spring cloud、spring data、spring data jpa等前沿技术强力驱动。
 
 如何运行
