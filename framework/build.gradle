@@ -12,13 +12,21 @@ buildscript {
         maven { url "http://repo.spring.io/lib-release" }
         maven { url "http://repo.spring.io/lib-snapshot" }
         maven { url "http://repo.spring.io/lib-milestone" }
+        maven { url "https://plugins.gradle.org/m2/" }
         jcenter()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
         classpath("io.spring.gradle:dependency-management-plugin:${bootGradlePluginVersion}")
+        classpath "gradle.plugin.nl.javadude.gradle.plugins:license-gradle-plugin:0.12.1"
     }
+
+
 }
+
+
+
+
 
 allprojects {
     apply plugin: 'java'
@@ -26,6 +34,7 @@ allprojects {
     apply plugin: 'maven'
     apply plugin: 'eclipse'
     apply plugin: 'io.spring.dependency-management'
+    apply plugin: "com.github.hierynomus.license"
 
     group = 'com.minlia.cloud.framework'
     version = "2.4.3-SNAPSHOT"
@@ -40,6 +49,7 @@ allprojects {
         maven { url "http://repo.spring.io/lib-release" }
         maven { url "http://repo.spring.io/lib-snapshot" }
         maven { url "http://repo.spring.io/lib-milestone" }
+        maven { url "https://plugins.gradle.org/m2/" }
         jcenter()
     }
 
@@ -47,11 +57,6 @@ allprojects {
         imports {
             mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
             mavenBom "org.springframework.cloud:spring-cloud-starter-parent:${springCloudStarterParentVersion}"
-        }
-    }
-    test {
-        testLogging {
-            events "passed", "skipped", "failed"
         }
     }
 
@@ -75,8 +80,99 @@ allprojects {
             scopes.PROVIDED.plus += [configurations.provided]
         }
     }
+
+    license {
+        header file("$rootProject.projectDir/licenses/HEADER.txt")
+        strictCheck true
+        ignoreFailures true
+        ext.year = Calendar.getInstance().get(Calendar.YEAR)
+    }
+
+    // This disables the pedantic doclint feature of JDK8
+    if (JavaVersion.current().isJava8Compatible()) {
+        tasks.withType(Javadoc) {
+            options.addStringOption('Xdoclint:none', '-quiet')
+        }
+    }
+
+    task sourcesJar(type: Jar) {
+        from sourceSets.main.allSource
+        classifier = 'sources'
+    }
+
+    task javadocJar(type: Jar, dependsOn: javadoc) {
+        classifier = 'javadoc'
+        from javadoc.destinationDir
+    }
+
+
+    test {
+        afterSuite { descriptor, result ->
+            def indicator = "\u001B[32m✓\u001b[0m"
+            if (result.failedTestCount > 0) {
+                indicator = "\u001B[31m✘\u001b[0m"
+            }
+            logger.lifecycle("$indicator Test ${descriptor.name}; Executed: ${result.testCount}/\u001B[32m${result.successfulTestCount}\u001B[0m/\u001B[31m${result.failedTestCount}\u001B[0m")
+        }
+
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+
+    def pomConfig = {
+        name project.name
+        description project.project_description
+        url project.project_url
+        inceptionYear '2004'
+
+        scm { url project.project_scm }
+
+        licenses {
+            license([:]) {
+                name 'The Apache Software License, Version 2.0'
+                url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                distribution 'repo'
+            }
+        }
+
+        developers {
+            developer {
+                id 'williamraym'
+                name 'William Raym'
+                url 'http://will.minlia.com/'
+                email 'will@minlia.com'
+                roles { role 'Developer' }
+            }
+        }
+
+        contributors {
+            contributor {
+                name 'William Raym'
+                email 'williamraym@gmail.com'
+            }
+            contributor {
+                name 'Entation'
+                email 'entation@qq.com'
+            }
+            contributor {
+                name 'Qian Yi'
+                email 'cqqianyi@qq.com'
+            }
+        }
+    }
+
+
+    if (!System.env.containsKey("JENKINS_URL")) {
+        def javaVersion = System.properties['java.version']
+        if (JavaVersion.toVersion(javaVersion) != project.targetCompatibility) {
+            throw new GradleException("Expected Java version ${project.targetCompatibility} but running with $javaVersion")
+        }
+    }
+
 }
 
+
 task wrapper(type: Wrapper) {
-    gradleVersion = '2.7'
+    gradleVersion = '2.8'
 }
