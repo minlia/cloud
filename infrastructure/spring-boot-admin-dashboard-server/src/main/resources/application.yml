@@ -1,0 +1,15 @@
+info:
+    component: Admin Server
+spring:
+    boot:
+        discovery:
+            enabled: true
+    application:
+        name: spring-boot-admin-dashboard-server
+    profiles:
+        active: dev
+---
+spring:
+    profiles: dev
+server:
+    port: 8078

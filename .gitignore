@@ -1,4 +1,7 @@
 .DS_Store
+
+/build/
+
 cloud-usercenter/classes/
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template

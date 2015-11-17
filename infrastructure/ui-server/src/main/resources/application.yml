@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: dev
+
+server:
+  port: 8282
+
+eureka:
+  client:
+    enabled: true

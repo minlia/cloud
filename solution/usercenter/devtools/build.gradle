@@ -1,0 +1,11 @@
+repositories {
+    maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }
+}
+
+dependencies {
+    compile "io.springfox:springfox-swagger2:2.2.3-SNAPSHOT"
+    compile "io.springfox:springfox-swagger-ui:2.2.3-SNAPSHOT"
+    testCompile 'io.springfox:springfox-staticdocs:2.2.3-SNAPSHOT'
+
+}
+

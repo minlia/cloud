@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: turbine-server
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: false
+
+server:
+  port: 8989
+
+management:
+  port: 8990
+
+logging:
+  level:
+    org: INFO
+
+turbine:
+  aggregator:
+    clusterConfig: system
+  appConfig: panda

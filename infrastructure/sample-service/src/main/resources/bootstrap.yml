@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: sample-service
+  cloud:
+    config:
+      enabled: true
+      failFast: true
+      retry:
+#        multiplier: 1.1
+#        maxAttempts: 6
+      discovery:
+        enabled: true
+        serviceId: config-server

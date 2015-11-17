@@ -1,0 +1,14 @@
+dependencies {
+    compile project(":restful-body")
+    compile("com.google.guava:guava:${guavaVersion}")
+    compile("org.apache.commons:commons-lang3:${commonsLang3Version}")
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.hibernate:hibernate-validator")
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.springframework.boot:spring-boot-starter-security")
+
+    compile("org.apache.httpcomponents:httpclient")
+    compile("com.thoughtworks.xstream:xstream-hibernate:1.4.8")
+    compile("com.thoughtworks.xstream:xstream:1.4.8")
+}
+

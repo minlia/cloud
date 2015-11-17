@@ -1,0 +1,9 @@
+dependencies {
+    compile project (":common")
+    compile project (":common-client")
+
+    compile('org.springframework.boot:spring-boot-starter-test')
+    compile('com.jayway.restassured:rest-assured:2.7.0')
+    compile('junit:junit')
+    compile('org.hamcrest:hamcrest-core')
+}

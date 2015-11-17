@@ -1,0 +1,55 @@
+# ===================================================================
+# Spring Boot configuration for the "dev" profile.
+#
+# This configuration overrides the application.yml file.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+spring:
+    profiles:
+        active: dev
+    datasource:
+#        driver-class-name: com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+        driverClassName: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/minlia_ecommerce_dev?createDatabaseIfNotExist=true&useUnicode=true&characterEncoding=utf8
+        name:
+        username: root
+        password:
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+        database: MYSQL
+        show_sql: false
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+    messages:
+        cache-seconds: 1
+
+security:
+    basic:
+        enabled: false
+
+server:
+    port: 9080
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css, application/javascript, application/json
+
+eureka:
+    client:
+    enabled: true
+    serviceUrl:
+      defaultZone: ${eureka.server.serviceUrl:http://localhost:8761/eureka/}
+
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+

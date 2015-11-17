@@ -1,0 +1,83 @@
+buildscript {
+    ext {
+        springBootVersion = '1.3.0.RC1'
+        springCloudStarterParentVersion = 'Brixton.M2'
+        bootGradlePluginVersion = '0.5.2.RELEASE'
+        guavaVersion = "18.0"
+        commonsLang3Version = "3.4"
+        springAdminVersion = '1.2.3'
+    }
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/lib-release" }
+        maven { url "http://repo.spring.io/lib-snapshot" }
+        maven { url "http://repo.spring.io/lib-milestone" }
+        jcenter()
+    }
+    dependencies {
+        classpath("io.spring.gradle:dependency-management-plugin:${bootGradlePluginVersion}")
+    }
+}
+
+
+allprojects {
+    apply plugin: 'java'
+    apply plugin: 'idea'
+    apply plugin: 'maven'
+    apply plugin: 'eclipse'
+    apply plugin: 'io.spring.dependency-management'
+
+    group = 'com.minlia.cloud.infrastructure'
+    version = "2.4.3-SNAPSHOT"
+
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        maven { url "http://repo.spring.io/lib-release" }
+        maven { url "http://repo.spring.io/lib-snapshot" }
+        maven { url "http://repo.spring.io/lib-milestone" }
+        jcenter()
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.boot:spring-boot-starter-parent:${springBootVersion}"
+            mavenBom "org.springframework.cloud:spring-cloud-starter-parent:${springCloudStarterParentVersion}"
+        }
+    }
+    test {
+        testLogging {
+            events "passed", "skipped", "failed"
+        }
+    }
+
+
+    configurations {
+        provided
+        compile.extendsFrom provided
+    }
+
+    sourceSets {
+        main { compileClasspath += [configurations.provided] }
+    }
+    eclipse {
+        classpath {
+            containers.remove('org.eclipse.jdt.launching.JRE_CONTAINER')
+            containers 'org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8'
+        }
+    }
+    idea {
+        module {
+            scopes.PROVIDED.plus += [configurations.provided]
+        }
+    }
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.7'
+}

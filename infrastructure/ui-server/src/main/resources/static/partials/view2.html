@@ -1,0 +1,14 @@
+<div>
+    <p>View - 2</p>
+    <p>{{message}}</p>
+    <p>{{now | date:'medium'}}</p>    
+    <p>
+        <label for="exampleSelect">Country:</label>
+        <select id="exampleSelect">
+            <option ng-repeat="country in countries" value="{{country.id}}">
+                {{country.name}}
+            </option>
+        </select>
+    </p>
+    
+</div>

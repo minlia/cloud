@@ -1,0 +1,11 @@
+include 'config-server'
+include 'discovery-server'
+include 'gateway-server'
+include 'dashboard-server'
+include 'spring-boot-admin-dashboard-server'
+include 'spring-cloud-dashboard-server'
+include 'turbine-server'
+include 'ui-server'
+
+include 'sample-service'
+

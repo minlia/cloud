@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>dev.bajiegc.com</title>
+
+        <meta name="description" content="Bootstrap 4.ALPHA, AngularJS template">
+        <meta name="author" content="StaleksIT">
+
+        <!-- Bootstrap 4.ALPHA style -->
+        <link href="./css/bootstrap/bootstrap.css" rel="stylesheet">
+        <!-- Font Awesome -->
+        <link href="./css/font-awesome.css" rel="stylesheet">
+        <!-- Application -->
+        <link href="./css/evidencija.css" rel="stylesheet">
+
+        <base href="/">
+    </head>
+
+    <body ng-app="myApp">
+
+        <!-- Header -->
+        <nav class="navbar navbar-fixed-top navbar-dark bg-inverse mat-design-900">
+            <a class="navbar-brand" href="/"><i class="fa fa-gg"></i>  StaleksIT</a>
+            <ul class="nav navbar-nav pull-right" ng-controller="HeaderLinksController">
+                <li class="nav-item" ng-repeat="link in links">
+                    <a class="nav-link" href="{{link.url}}">{{link.name}}</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main content -->
+        <div id="page-content" ng-view>
+        </div>
+
+        <!-- jQuery 2.1.4 -->
+        <script src="./js/jquery/jquery-2.1.4.js"></script>
+        <!-- Bootstrap 4.ALPHA -->
+        <script src="./js/bootstrap/bootstrap.js"></script>
+        <!-- AngularJS 1.4.7 -->
+        <script src="./js/angularjs/angular.js"></script>
+        <script src="./js/angularjs/angular-route.js"></script>
+
+        <!-- Application JS -->
+        <script src="js/app.js"></script>
+
+        <script src="./js/controllers.js"></script>
+        <script src="./js/directives.js"></script>
+        <script src="./js/filters.js"></script>
+        <script src="./js/services.js"></script>
+    </body>
+</html>

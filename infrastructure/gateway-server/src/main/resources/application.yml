@@ -1,0 +1,122 @@
+info:
+  component: Gateway Server
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+#zuul:
+#  ignored-services: "*"
+#  routes:
+#    zhubajie-app-apiprovider:
+#      path: /zhubajie-app-apiprovider/**
+##      serviceId: zhubajie-app-apiprovider
+#      url: http://localhost:8181/
+
+
+
+#zuul:
+#  ignoredServices: "*"
+#  routes:
+#    category:
+#      url: http://localhost:9000
+#    product:
+#      url: http://localhost:8081
+
+
+#zuul:
+#  ignoredServices: "*"
+#  routes:
+#    category:
+#      serviceId: ecommerce-category
+#      path: /**
+#    reservation:
+#      serviceId: reservation-service
+#      path: /reservation/**
+eureka:
+  client:
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+server:
+  port: 8765
+
+logging:
+  level:
+    ROOT: INFO
+    org.springframework.web: DEBUG
+
+
+
+
+
+
+
+
+
+
+#
+#spring:
+#  oauth2:
+#    resource:
+#      userInfoUri: https://localhost:9999/uaa/user
+
+#eureka:
+#  instance:
+#    leaseRenewalIntervalInSeconds: 3
+#    metadataMap:
+#      instanceId: ${vcap.application.instance_id:${spring.application.name}:${spring.application.instance_id:${random.value}}}
+#  client:
+#    # Default values comes from org.springframework.cloud.netflix.eurek.EurekaClientConfigBean
+#    registryFetchIntervalSeconds: 5
+#    instanceInfoReplicationIntervalSeconds: 5
+#    initialInstanceInfoReplicationIntervalSeconds: 5
+#
+#endpoints:
+#  restart:
+#    enabled: true
+#  shutdown:
+#    enabled: true
+#  health:
+#    sensitive: false
+
+zuul:
+    health:
+#        enabled: true
+    ignoredServices: "*"
+#    prefix: /api/v2
+    routes:
+        financial-trading:
+            stripPrefix: false
+            path:
+                /api/v2/trading/**
+        nanjiq-backend:
+          path: /api/v2/nanjiq/**
+          stripPrefix: false
+        ecommerce-category:
+          path: /api/v2/categories/**
+          stripPrefix: false
+        ecommerce-product:
+          path: /api/v2/products/**
+          stripPrefix: false
+        sample-service:
+          path: /api/v2/samples/**
+          stripPrefix: false
+        ui-service:
+          path: /**
+          stripPrefix: true
+
+
+
+spring:
+    mvc:
+        favicon:
+            enabled: false
+security:
+    basic:
+        enabled: false
