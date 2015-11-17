@@ -1,6 +1,7 @@
 .DS_Store
 
-/build/
+build/
+classes/
 
 cloud-usercenter/classes/
 # Created by .ignore support plugin (hsz.mobi)
