@@ -22,6 +22,7 @@
 	</properties>
 	<modules>
 		<module>spring-boot-sample-ant</module>
+		<module>spring-boot-sample-activiti</module>
 		<module>spring-boot-sample-activemq</module>
 		<module>spring-boot-sample-actuator</module>
 		<module>spring-boot-sample-actuator-log4j</module>

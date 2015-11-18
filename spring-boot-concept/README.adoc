@@ -2,6 +2,8 @@ spring-boot-concept 来自官方spring-boot项目示例大全
 
 该应用提供了以下示例集
 
+* link:spring-boot-sample-activiti[spring-boot-sample-activiti]
+  -- spring boot 集成activiti工作流示例
 * link:spring-boot-sample-simple[spring-boot-sample-simple]
   -- 命令行应用
 * link:spring-boot-sample-tomcat[spring-boot-sample-tomcat]
