@@ -87,7 +87,8 @@ spring-boot-concept 来自官方spring-boot项目示例大全
 * link:spring-boot-sample-xml[spring-boot-sample-xml]
   -- 传统的XML配置结使现代的配置方式，建议使用`@Configuration`式配置
 
-Ship you by minlia team
+Powered by spring team
+Translated by minlia team
 
 
 
