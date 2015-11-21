@@ -1,0 +1,3 @@
+app:
+  name: mobile-frontend-webapp
+  description: ${app.name} is a Spring Boot application
