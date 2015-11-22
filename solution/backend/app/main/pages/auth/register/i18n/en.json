@@ -1,0 +1,14 @@
+{
+    "REGISTER": {
+        "TITLE": "Create an account",
+        "NAME": "Name",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "PASSWORD_CONFIRM": "Password (Confirm)",
+        "READ_ACCEPT": "I read and accept",
+        "TERMS_COND": "terms and conditions",
+        "CREATE_ACCOUNT": "CREATE MY ACCOUNT",
+        "ALREADY_HAVE": "Already have an account?",
+        "LOGIN": "Log in"
+    }
+}

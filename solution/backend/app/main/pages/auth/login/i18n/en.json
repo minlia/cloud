@@ -1,0 +1,15 @@
+{
+    "LOGIN": {
+        "TITLE": "Log in to your account",
+        "USERNAME": "Username",
+        "PASSWORD": "Password",
+        "REMEMBER_ME": "Remember Me",
+        "FORGOT_PASSWORD": "Forgot Password?",
+        "LOG_IN": "LOG IN",
+        "OR": "OR",
+        "WITH_GOOGLE": "Log in with Google",
+        "WITH_FACEBOOK": "Log in with Facebook",
+        "DONT_HAVE_ACCOUNT": "Don't have an account?",
+        "CREATE_ACCOUNT": "Create an account"
+    }
+}

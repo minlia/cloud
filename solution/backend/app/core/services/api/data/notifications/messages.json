@@ -1,0 +1,28 @@
+{
+    "data": [
+        {
+            "user": {
+                "name": "Suzy Lowell",
+                "avatar": "images/profile-images/profile.jpg"
+            },
+            "text": "is voting for the Volcanic Ash Cloud Party. It has achieved more in 5 days to control Immigration, Pollution & Drug Trafficking than any other party for years",
+            "time": "5:30am"
+        },
+        {
+            "user": {
+                "name": "Faron Eustace",
+                "avatar": "images/profile-images/profile.jpg"
+            },
+            "text": "I'm not perfect, deal with it.",
+            "time": "4:00am"
+        },
+        {
+            "user": {
+                "name": "Robynne Warren",
+                "avatar": "images/profile-images/profile.jpg"
+            },
+            "text": "It's painful to realize that you prefer not to hold on to a certain person anymore, because if you stay, you will only get hurt everyday!",
+            "time": "1:00am"
+        }
+    ]
+}

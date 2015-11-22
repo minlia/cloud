@@ -1,0 +1,25 @@
+{
+    "SEARCH": {
+        "SEARCH": "Search..",
+        "SEARCH_SETTINGS": "Search settings",
+        "SETTINGS_1": "Settings 1",
+        "SETTINGS_2": "Settings 2",
+        "RESULTS": "Results",
+        "OF": "of",
+        "PREVIOUS_PAGE": "previous page",
+        "NEXT_PAGE": "next page",
+        "GO_TO_PREVIOUS": "Go to previous page",
+        "GO_TO_NEXT": "Go to next page",
+        "CONTACTS": "Contacts",
+        "NAME": "Name",
+        "POSITION": "Position",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "EMAILS": "E-Mails",
+        "USERS": "Users",
+        "OFFICE": "Office",
+        "AGE": "Age",
+        "START_DATE": "Start Date",
+        "SALARY": "Salary"
+    }
+}

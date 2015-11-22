@@ -1,0 +1,8 @@
+{
+    "FORGOTPASSWORD": {
+        "TITLE": "Recover your password",
+        "EMAIL_ADRESS": "Email address",
+        "RESET_PASSWORD": "RESET MY PASSWORD",
+        "GO_BACK": "Go back to login"
+    }
+}

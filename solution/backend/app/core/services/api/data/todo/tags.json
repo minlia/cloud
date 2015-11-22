@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "frontend",
+            "label": "Frontend",
+            "color": "#388E3C"
+        },
+        {
+            "id": 2,
+            "name": "backend",
+            "label": "Backend",
+            "color": "#F44336"
+        },
+        {
+            "id": 3,
+            "name": "API",
+            "label": "API",
+            "color": "#FF9800"
+        },
+        {
+            "id": 4,
+            "name": "issue",
+            "label": "Issue",
+            "color": "#0091EA"
+        },
+        {
+            "id": 5,
+            "name": "mobile",
+            "label": "Mobile",
+            "color": "#9C27B0"
+        }
+    ]
+}

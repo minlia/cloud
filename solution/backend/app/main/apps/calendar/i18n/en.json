@@ -1,0 +1,31 @@
+{
+    "CALENDAR": {
+        "CALENDAR": "Calendar",
+        "SEARCH": "Search",
+        "TODAY": "Today",
+        "DAY": "Day",
+        "WEEK": "Week",
+        "MONTH": "Month",
+        "PREVIOUS": "Previous",
+        "NEXT": "Next",
+        "ADD_EVENT": "Add event",
+        "EDIT_EVENT": "Edit event",
+        "CLOSE_DIALOG": "Close dialog",
+        "TITLE": "Title",
+        "ALL_DAY": "All day",
+        "START_DATE": "Start Date",
+        "START_TIME": "Start Time",
+        "END_DATE": "End Date",
+        "END_TIME": "End Time",
+        "REPEAT": "Repeat",
+        "LOCATION": "Location",
+        "NOTIFICATIONS": "Notifications",
+        "ADD_NOTIFICATION": "+ Add Another Notification",
+        "NOTES": "Notes",
+        "SAVE": "SAVE",
+        "DELETE": "Delete",
+        "30_MIN_BEFORE": "30 minutes before",
+        "15_MIN_BEFORE": "15 minutes before",
+        "30_MIN_LATER": "30 minutes later"
+    }
+}

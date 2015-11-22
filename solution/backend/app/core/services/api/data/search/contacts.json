@@ -1,0 +1,46 @@
+{
+  "data": [
+    {
+      "name": "Alice Freeman",
+      "avatar": "assets/images/avatars/alice.jpg",
+      "position": "Software Engineer",
+      "email": "a.freeman@mail.com",
+      "phone": "3-884-96-76"
+    },
+    {
+      "name": "Danielle Obrien",
+      "avatar": "assets/images/avatars/danielle.jpg",
+      "position": "Accountant",
+      "email": "d.obrien@mail.com",
+      "phone": "2-987-23-87"
+    },
+    {
+      "name": "Garry Arnold",
+      "avatar": "assets/images/avatars/garry.jpg",
+      "position": "Senior Designer",
+      "email": "g.arnold@mail.com",
+      "phone": "6-183-19-28"
+    },
+    {
+      "name": "James Lewis",
+      "avatar": "assets/images/avatars/james.jpg",
+      "position": "Security",
+      "email": "j.lewis@mail.com",
+      "phone": "8-939-76-97"
+    },
+    {
+      "name": "Joyce Walters",
+      "avatar": "assets/images/avatars/joyce.jpg",
+      "position": "Janitor",
+      "email": "j.walters@mail.com",
+      "phone": "1-647-91-46"
+    },
+    {
+      "name": "Vincent Munoz",
+      "avatar": "assets/images/avatars/vincent.jpg",
+      "position": "Junior Designer",
+      "email": "v.munoz@mail.com",
+      "phone": "2-984-18-75"
+    }
+  ]
+}

@@ -1,0 +1,330 @@
+<!doctype html><html ng-app="fuse"><head><base href="/"><meta charset="utf-8"><meta name="description" content=""><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><title>Fuse - Admin Theme</title><style>
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak, .ng-hide:not(.ng-hide-animate) {
+                display: none !important;
+            }
+
+            ng\:form {
+                display: block;
+            }
+
+            #splash-screen {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #3C4252;
+                z-index: 99999;
+            }
+
+            [ng-cloak]#splash-screen {
+                display: block !important;
+            }
+
+            #splash-screen .center {
+                display: block;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            #splash-screen .logo {
+                width: 96px;
+                height: 96px;
+                line-height: 96px;
+                margin: 0 auto 48px auto;
+                font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+                font-size: 56px;
+                text-align: center;
+                border-radius: 2px;
+                background-color: #039BE5;
+                color: #FFFFFF;
+                box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.22);
+            }
+
+            #splash-screen .spinner-wrapper {
+                position: relative;
+                margin: 0 auto;
+                text-align: center;
+                -webkit-transform: translate3d(0, 0, 0);
+                -ms-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                -webkit-animation: rotate 2.25s linear infinite;
+                animation: rotate 2.25s linear infinite;
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner .spinner {
+                display: inline-block;
+                position: relative;
+                width: 48px;
+                height: 48px;
+                -webkit-animation: sporadic-rotate 5s ease infinite;
+                animation: sporadic-rotate 5s ease infinite;
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner .spinner .left {
+                position: absolute;
+                overflow: hidden;
+                top: 0;
+                left: 0;
+                width: 24px;
+                height: 48px;
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner .spinner .left .circle {
+                width: 48px;
+                height: 48px;
+                border: 4px solid #4285F4;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                border-radius: 50%;
+                -webkit-animation: animate-left-circle 1.25s ease infinite, left-circle-colors 5s linear infinite;
+                animation: animate-left-circle 1.25s ease infinite, left-circle-colors 5s linear infinite;
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner .spinner .right {
+                position: absolute;
+                overflow: hidden;
+                top: 0;
+                left: 50%;
+                width: 24px;
+                height: 48px;
+            }
+
+            #splash-screen .spinner-wrapper .outer-spinner .spinner .right .circle {
+                position: relative;
+                right: 100%;
+                width: 48px;
+                height: 48px;
+                border: 4px solid #4285F4;
+                border-left-color: transparent;
+                border-bottom-color: transparent;
+                border-radius: 50%;
+                -webkit-animation: animate-right-circle 1.25s ease infinite, right-circle-colors 5s linear infinite;
+                animation: animate-right-circle 1.25s ease infinite, right-circle-colors 5s linear infinite;
+            }
+
+            @-webkit-keyframes rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes rotate {
+                0% {
+                    -webkit-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    transform: rotate(0deg);
+                }
+                100% {
+                    -webkit-transform: rotate(360deg);
+                    -ms-transform: rotate(360deg);
+                    transform: rotate(360deg);
+                }
+            }
+
+            @keyframes sporadic-rotate {
+                12.5% {
+                    -webkit-transform: rotate(135deg);
+                    -ms-transform: rotate(135deg);
+                    transform: rotate(135deg);
+                }
+                25% {
+                    -webkit-transform: rotate(270deg);
+                    -ms-transform: rotate(270deg);
+                    transform: rotate(270deg);
+                }
+                37.5% {
+                    -webkit-transform: rotate(405deg);
+                    -ms-transform: rotate(405deg);
+                    transform: rotate(405deg);
+                }
+                50% {
+                    -webkit-transform: rotate(540deg);
+                    -ms-transform: rotate(540deg);
+                    transform: rotate(540deg);
+                }
+                62.5% {
+                    -webkit-transform: rotate(675deg);
+                    -ms-transform: rotate(675deg);
+                    transform: rotate(675deg);
+                }
+                75% {
+                    -webkit-transform: rotate(810deg);
+                    -ms-transform: rotate(810deg);
+                    transform: rotate(810deg);
+                }
+                87.5% {
+                    -webkit-transform: rotate(945deg);
+                    -ms-transform: rotate(945deg);
+                    transform: rotate(945deg);
+                }
+                100% {
+                    -webkit-transform: rotate(1080deg);
+                    -ms-transform: rotate(1080deg);
+                    transform: rotate(1080deg);
+                }
+            }
+
+            @-webkit-keyframes animate-left-circle {
+                0%, 100% {
+                    -webkit-transform: rotate(130deg);
+                    -ms-transform: rotate(130deg);
+                    transform: rotate(130deg);
+                }
+                50% {
+                    -webkit-transform: rotate(-5deg);
+                    -ms-transform: rotate(-5deg);
+                    transform: rotate(-5deg);
+                }
+            }
+
+            @keyframes animate-left-circle {
+                0%, 100% {
+                    -webkit-transform: rotate(130deg);
+                    -ms-transform: rotate(130deg);
+                    transform: rotate(130deg);
+                }
+                50% {
+                    -webkit-transform: rotate(-5deg);
+                    -ms-transform: rotate(-5deg);
+                    transform: rotate(-5deg);
+                }
+            }
+
+            @-webkit-keyframes animate-right-circle {
+                0%, 100% {
+                    -webkit-transform: rotate(-130deg);
+                    -ms-transform: rotate(-130deg);
+                    transform: rotate(-130deg);
+                }
+                50% {
+                    -webkit-transform: rotate(5deg);
+                    -ms-transform: rotate(5deg);
+                    transform: rotate(5deg);
+                }
+            }
+
+            @keyframes animate-right-circle {
+                0%, 100% {
+                    -webkit-transform: rotate(-130deg);
+                    -ms-transform: rotate(-130deg);
+                    transform: rotate(-130deg);
+                }
+                50% {
+                    -webkit-transform: rotate(5deg);
+                    -ms-transform: rotate(5deg);
+                    transform: rotate(5deg);
+                }
+            }
+
+            @-webkit-keyframes left-circle-colors {
+                0%, 100% {
+                    border-color: #4285F4;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                25% {
+                    border-color: #DE3E35;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-color: #F7C223;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                75% {
+                    border-color: #1B9A59;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+
+            @keyframes left-circle-colors {
+                0%, 100% {
+                    border-color: #4285F4;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                25% {
+                    border-color: #DE3E35;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-color: #F7C223;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                75% {
+                    border-color: #1B9A59;
+                    border-right-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+
+            @-webkit-keyframes right-circle-colors {
+                0%, 100% {
+                    border-color: #4285F4;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                25% {
+                    border-color: #DE3E35;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-color: #F7C223;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                75% {
+                    border-color: #1B9A59;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+
+            @keyframes right-circle-colors {
+                0%, 100% {
+                    border-color: #4285F4;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                25% {
+                    border-color: #DE3E35;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                50% {
+                    border-color: #F7C223;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+                75% {
+                    border-color: #1B9A59;
+                    border-left-color: transparent;
+                    border-bottom-color: transparent;
+                }
+            }
+        </style><link rel="stylesheet" href="styles/vendor-c31d966584.css"><link rel="stylesheet" href="styles/app-34686118f0.css"><link rel="stylesheet" href="assets/icons/style.css"></head><!--[if lt IE 10]>
+ <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+ your browser</a> to improve your experience.</p>
+ <![endif]--><body md-theme="{{vm.themes.active.name}}" md-theme-watch="" ng-controller="AppController as vm"><div ng-cloak="" id="splash-screen"><div class="center"><div class="logo"><span>F</span></div><div class="spinner-wrapper"><div class="outer-spinner"><div class="spinner"><div class="left"><div class="circle"></div></div><div class="right"><div class="circle"></div></div></div></div></div></div></div><div id="main" class="animate slide-up" flex="" layout="row" ui-view="main"></div><div id="theme-options" ui-view="themeOptions"></div><script src="scripts/vendor-d59468ecde.js"></script><script src="scripts/app-8ca6e6b480.js"></script></body></html>

@@ -1,0 +1,22 @@
+{
+    "INVOICE": {
+        "CLIENT": "CLIENT",
+        "PHONE": "Phone",
+        "EMAIL": "Email",
+        "WEB": "Web",
+        "INVOICE": "INVOICE",
+        "INVOICE_DATE": "INVOICE DATE",
+        "DUE_DATE": "DUE DATE",
+        "TOTAL_DUE": "TOTAL DUE",
+        "SERVICE": "SERVICE",
+        "UNIT": "UNIT",
+        "UNIT_PRICE": "UNIT PRICE",
+        "QUANTITY": "QUANTITY",
+        "TOTAL": "TOTAL",
+        "SUBTOTAL": "SUBTOTAL",
+        "TAX": "TAX",
+        "DISCOUNT": "DISCOUNT",
+        "NOTE": "Please pay within 15 days. Thank you for your business.",
+        "SMALL_NOTE": "In condimentum malesuada efficitur. Mauris volutpat placerat auctor. Ut ac congue dolor. Quisque scelerisque lacus sed feugiat fermentum. Cras aliquet facilisis pellentesque. Nunc hendrerit quam at leo commodo, a suscipit tellus dapibus. Etiam at felis volutpat est mollis lacinia. Mauris placerat sem sit amet velit mollis, in porttitor ex finibus. Proin eu nibh id libero tincidunt lacinia et eget eros. Nulla laoreet ipsum quam, quis auctor velit sodales sit amet. Phasellus at felis iaculis, sodales lectus vitae, egestas mauris. Duis cursus, metus non dignissim consectetur, augue erat convallis massa, sit amet mollis lacus lorem eu purus. Praesent posuere ante quam. Curabitur ultricies magna diam, non consequat purus suscipit quis. Proin egestas nibh id massa dapibus, sed auctor velit ullamcorper. Integer id dolor nunc."
+    }
+}

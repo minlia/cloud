@@ -1,0 +1,128 @@
+{
+    "data": [
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-1/template-1.html",
+                "media": {
+                    "image": {
+                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "alt": "Early Sunrise"
+                    }
+                },
+                "title": "Nature",
+                "subtitle": "Mountain view from lake side",
+                "text": "Look deep into nature, then you will understand everything better."
+            },
+            "icon" : "icon-document",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
+                "title": "Friends",
+                "event": "Gordon Freeman is now following you",
+                "media": {
+                    "image": {
+                        "src": "assets/images/avatars/garry.jpg",
+                        "alt": "Andrew Ryan"
+                    }
+                }
+            },
+            "icon" : "icon-account-plus",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You have a new follower"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-2/template-2.html",
+                "avatar": {
+                    "src": "assets/images/avatars/alice.jpg",
+                    "alt": "Alice Freeman"
+                },
+                "title": "Alice Freeman posted on Nature",
+                "subtitle": "32 minutes ago",
+                "media": {
+                    "image": {
+                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "alt": "Early Sunrise"
+                    }
+                },
+                "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better."
+            },
+            "icon" : "icon-document",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "Alice Freeman shared an article with public"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-3/template-3.html",
+                "title": "Poison",
+                "subtitle": "Alice Cooper",
+                "cta": "LISTEN NOW",
+                "media": {
+                    "image": {
+                        "src": "assets/images/etc/alice-cooper-poison.jpg",
+                        "alt": "Alice Cooper - Poison"
+                    }
+                }
+            },
+            "icon" : "icon-music-note",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "Duke shared a song with public"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-4/template-4.html",
+                "title": "Nature",
+                "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+                "media": {
+                    "image": {
+                        "src": "assets/images/etc/avenue.jpg",
+                        "alt": "Avenue"
+                    }
+                }
+            },
+            "icon" : "icon-document",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You posted a blog"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-5/template-5.html",
+                "title": "Friends",
+                "event": "Andrew Ryan is now following you",
+                "media": {
+                    "image": {
+                        "src": "assets/images/avatars/vincent.jpg",
+                        "alt": "Andrew Ryan"
+                    }
+                }
+            },
+            "icon" : "icon-account-plus",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "You have a new follower"
+        },
+        {
+            "card": {
+                "template": "app/core/directives/ms-card/templates/template-9/template-9.html",
+                "avatar": {
+                    "src": "assets/images/avatars/alice.jpg",
+                    "alt": "Alice Freeman"
+                },
+                "title": "Alice Freeman posted on Nature",
+                "subtitle": "Aug 29, 2015",
+                "text": "Look deep into nature, then you will understand everything better. Look deep into nature, then you will understand everything better.",
+                "media": {
+                    "image": {
+                        "src": "assets/images/etc/early-sunrise.jpg",
+                        "alt": "Early Sunrise"
+                    }
+                }
+            },
+            "icon" : "icon-document",
+            "time": "July 22, 2015, 12:33AM",
+            "event": "Alice Freeman shared an article with you"
+        }
+    ]
+}
