@@ -1,0 +1,5 @@
+com.minlia.cloud.framework.web.config
+com.minlia.cloud.framework.web.controller
+com.minlia.cloud.framework.web.exceptions
+com.minlia.cloud.framework.web.logging
+com.minlia.cloud.framework.web.validation

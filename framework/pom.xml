@@ -1,0 +1,384 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.minlia.cloud.framework</groupId>
+    <artifactId>framework-parent</artifactId>
+    <version>2.4.3.RELEASE</version>
+    <packaging>pom</packaging>
+
+    <name>framework-parent</name>
+    <url>https://github.com/minlia/framework</url>
+    <description>Minlia Framework</description>
+
+
+    <properties>
+
+
+
+
+
+
+
+        <!-- non-dependencies -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+
+        <!-- Spring related -->
+        <spring.version>4.2.3.RELEASE</spring.version>
+
+        <!-- marshalling -->
+        <jackson.version>2.6.0</jackson.version>
+        <jaxb-api.version>2.2.12</jaxb-api.version>
+
+        <!-- commons and utils -->
+        <commons-lang3.version>3.4</commons-lang3.version>
+        <guava.version>18.0</guava.version>
+
+        <!-- UNSORTED -->
+        <commons-codec.version>1.10</commons-codec.version>
+
+
+        <!-- testing -->
+        <org.hamcrest.version>1.3</org.hamcrest.version>
+        <junit.version>4.12</junit.version>
+        <mockito.version>1.10.19</mockito.version>
+
+        <httpcore.version>4.4.3</httpcore.version>
+        <httpclient.version>4.5.1</httpclient.version>
+
+        <rest-assured.version>2.6.0</rest-assured.version>
+
+
+
+
+
+        <main.basedir>${basedir}/..</main.basedir>
+        <spring.boot.version>1.3.0.RELEASE</spring.boot.version>
+        <minlia.framework.version>2.4.3.RELEASE</minlia.framework.version>
+        <joda.time.version>2.9.1</joda.time.version>
+        <usertype.version>2.0.1</usertype.version>
+        <lombok.version>1.16.6</lombok.version>
+        <dozer.version>5.5.1</dozer.version>
+        <lombok.plugin.version>1.16.6.1</lombok.plugin.version>
+
+
+        <java.version>1.8</java.version>
+        <file.encoding>UTF-8</file.encoding>
+        <xstream.version>1.4.8</xstream.version>
+
+        <commons-io.version>2.4</commons-io.version>
+
+    </properties>
+
+
+    <modules>
+        <module>common</module>
+        <module>common-client</module>
+        <module>common-test</module>
+        <module>common-devtools</module>
+        <module>restful-body</module>
+        <module>config</module>
+    </modules>
+
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <!-- Import dependency management from Spring Boot -->
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring.boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <configuration>
+                    <failOnMissingWebXml>false</failOnMissingWebXml>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <configuration>
+                    <useProjectReferences>false</useProjectReferences>
+                    <additionalConfig>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.ui.prefs</name>
+                            <location>${main.basedir}/eclipse/org.eclipse.jdt.ui.prefs</location>
+                        </file>
+                        <file>
+                            <name>.settings/org.eclipse.jdt.core.prefs</name>
+                            <location>${main.basedir}/eclipse/org.eclipse.jdt.core.prefs</location>
+                        </file>
+                    </additionalConfig>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-idea-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <includes>
+                        <include>**/*Tests.java</include>
+                    </includes>
+                    <excludes>
+                        <exclude>**/Abstract*.java</exclude>
+                    </excludes>
+                    <systemPropertyVariables>
+                        <java.security.egd>file:/dev/./urandom</java.security.egd>
+                        <java.awt.headless>true</java.awt.headless>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+
+
+            <!-- Java Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <compilerVersion>${java.version}</compilerVersion>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <charset>${file.encoding}</charset>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok-maven-plugin</artifactId>
+                <version>${lombok.plugin.version}</version>
+                <configuration>
+                    <encoding>${file.encoding}</encoding>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>delombok</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <profiles>
+        <profile>
+            <id>lombok-needs-tools-jar</id>
+            <activation>
+                <file>
+                    <exists>${java.home}/../lib/tools.jar</exists>
+                </file>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.projectlombok</groupId>
+                        <artifactId>lombok-maven-plugin</artifactId>
+                        <version>${lombok.plugin.version}</version>
+                        <dependencies>
+                            <dependency>
+                                <groupId>sun.jdk</groupId>
+                                <artifactId>tools</artifactId>
+                                <version>1.8</version>
+                                <scope>system</scope>
+                                <systemPath>${java.home}/../lib/tools.jar</systemPath>
+                            </dependency>
+                        </dependencies>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+
+        <profile>
+            <id>doclint-java8-disable</id>
+            <activation>
+                <jdk>[1.8,)</jdk>
+            </activation>
+
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <configuration>
+                            <additionalparam>-Xdoclint:none</additionalparam>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
+
+
+    <repositories>
+
+        <repository>
+            <id>maven-releases</id>
+            <name>maven Releases</name>
+            <url>http://repo1.maven.org/maven2/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>osc-releases</id>
+            <name>OSC Releases</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+
+        <repository>
+            <id>spring-release</id>
+            <name>Spring Releases</name>
+            <url>http://repo.spring.io/release/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+
+        <repository>
+            <id>osc-snapshots</id>
+            <name>OSC Snapshots</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+
+
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>http://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+
+        <pluginRepository>
+            <id>osc-releases</id>
+            <name>OSC Releases</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+
+        <pluginRepository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>http://repo.spring.io/release</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+
+        <pluginRepository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>http://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </pluginRepository>
+        <pluginRepository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>http://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+
+    </pluginRepositories>
+
+
+    <developers>
+        <developer>
+            <email>williamraym@gmail.com</email>
+            <name>William Raym</name>
+            <url>https://github.com/minlia</url>
+            <id>williamraym</id>
+        </developer>
+        <developer>
+            <email>420303798@qq.com</email>
+            <name>qianyi</name>
+            <url>https://github.com/cqqianyi</url>
+            <id>cqqianyi</id>
+        </developer>
+        <developer>
+            <email>6208317@qq.com</email>
+            <name>tonyc</name>
+            <url>https://github.com/im-qq</url>
+            <id>tonyc</id>
+        </developer>
+        <developer>
+            <email>1169435200@qq.com</email>
+            <name>tym</name>
+            <url>https://github.com/tym</url>
+            <id>tym</id>
+        </developer>
+    </developers>
+</project>
+
+
+
+
+

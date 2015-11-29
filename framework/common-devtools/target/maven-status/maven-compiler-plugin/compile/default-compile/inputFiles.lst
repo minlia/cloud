@@ -1,0 +1,15 @@
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/validation/ValidationContext.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/config/MvcLoggerConfig.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/exceptions/NotFoundException.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/logging/TeePrintWriter.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/validation/ModelConstraint.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/logging/RequestWrapper.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/controller/ValidationController.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/logging/LoggingFilter.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/validation/ValidationServiceImpl.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/validation/ValidationService.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/config/ValidationConfig.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/config/WebmvcLoggerConfig.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/logging/ResponseWrapper.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/validation/ValidationConstraint.java
+/Users/user/workspace/minlia/cloud/framework/common-devtools/src/main/java/com/minlia/cloud/framework/web/config/Swagger2Config.java

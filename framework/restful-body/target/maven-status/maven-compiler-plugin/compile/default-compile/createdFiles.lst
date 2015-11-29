@@ -1,0 +1,8 @@
+com/minlia/cloud/framework/body/Body.class
+com/minlia/cloud/framework/body/impl/StatefulResponseBody.class
+com/minlia/cloud/framework/body/impl/FailureResponseBody.class
+com/minlia/cloud/framework/body/impl/SuccessResponseBody.class
+com/minlia/cloud/framework/body/StatefulBody.class
+com/minlia/cloud/framework/body/constants/BodyState.class
+com/minlia/cloud/framework/body/impl/UnknownResponseBody.class
+com/minlia/cloud/framework/body/ResponseBody.class
