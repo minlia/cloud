@@ -1,6 +1,28 @@
 server:
     port: 10003
 
+
+spring:
+    devtools:
+        restart:
+            enabled: true
+        livereload:
+            enabled: false # we use Grunt + BrowserSync for livereload
+    datasource:
+        driver-class-name: org.h2.jdbcx.JdbcDataSource
+        url: jdbc:h2:file:./target/h2db/db/activiti;DB_CLOSE_DELAY=-1
+        name:
+        username:
+        password:
+    jpa:
+        database-platform: org.hibernate.dialect.H2Dialect
+        database: H2
+        show_sql: false
+        properties:
+            hibernate.cache.use_second_level_cache: false
+            hibernate.cache.use_query_cache: false
+            hibernate.generate_statistics: false
+            hibernate.cache.region.factory_class: org.hibernate.cache.ehcache.SingletonEhCacheRegionFactory
 logging:
     pattern:
 #        console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} [%thread] %-5level %class - %msg%n"
