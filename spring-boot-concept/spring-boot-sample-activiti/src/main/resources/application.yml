@@ -1,2 +1,24 @@
 server:
     port: 10003
+
+logging:
+    pattern:
+#        console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} [%thread] %-5level %class - %msg%n"
+        console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%logger){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+        #	<property name="CONSOLE_LOG_PATTERN" value="%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+        #	<property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} ${LOG_LEVEL_PATTERN:-%5p} ${PID:- } --- [%t] %-40.40logger{39} : %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    level:
+        ROOT: INFO
+        org.springframework.web: ERROR
+        org.xnio: ERROR
+        springfox: ERROR
+        io.undertow: ERROR
+        org.hibernate: ERROR
+        org.dozer: ERROR
+        jdbc.connection: OFF
+        jdbc.resultset: OFF
+        jdbc.resultsettable: INFO
+        jdbc.audit: OFF
+        jdbc.sqltiming: OFF
+        jdbc.sqlonly: INFO
+

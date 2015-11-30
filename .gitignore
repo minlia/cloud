@@ -2,7 +2,7 @@
 
 build/
 classes/
-
+target/
 cloud-usercenter/classes/
 # Created by .ignore support plugin (hsz.mobi)
 ### JetBrains template

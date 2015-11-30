@@ -58,8 +58,9 @@
         <minlia.framework.version>2.4.3.RELEASE</minlia.framework.version>
         <joda.time.version>2.9.1</joda.time.version>
         <usertype.version>2.0.1</usertype.version>
-        <lombok.version>1.16.6</lombok.version>
         <dozer.version>5.5.1</dozer.version>
+        <lombok.version>1.16.6</lombok.version>
+
         <lombok.plugin.version>1.16.6.1</lombok.plugin.version>
 
 
