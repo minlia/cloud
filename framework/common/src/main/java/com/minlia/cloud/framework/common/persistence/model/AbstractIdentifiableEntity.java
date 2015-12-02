@@ -28,7 +28,7 @@ import javax.persistence.*;
 public abstract class AbstractIdentifiableEntity implements IEntity, IDto {
 
     @JsonProperty
-    private Long id;
+    protected Long id;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
