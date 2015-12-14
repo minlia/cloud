@@ -15,7 +15,7 @@
           <activiti:expression>${email}</activiti:expression>
         </activiti:field>
         <activiti:field name="from">
-          <activiti:expression>test@activiti.org</activiti:expression>
+          <activiti:expression>entation@qq.com</activiti:expression>
         </activiti:field>
         <activiti:field name="subject">
           <activiti:string><![CDATA[Your application has been rejected]]></activiti:string>

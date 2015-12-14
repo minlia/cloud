@@ -57,7 +57,7 @@ public class HireProcessTest {
     public void testHappyPath() {
 
         // Create test applicant
-        Applicant applicant = new Applicant("John Doe", "john@activiti.org", "12344");
+        Applicant applicant = new Applicant("williamraym", "williamraym@qq.com", "12344");
         applicantRepository.save(applicant);
 
         // Start process instance
