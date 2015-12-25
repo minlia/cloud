@@ -21,6 +21,8 @@
 		<java.version>1.8</java.version>
 	</properties>
 	<modules>
+		<module>mybatis-spring-boot-sample-annotation</module>
+    		<module>mybatis-spring-boot-sample-xml</module>
 		<module>spring-boot-sample-ant</module>
 		<module>spring-boot-sample-activiti</module>
 		<module>spring-boot-sample-activemq</module>
