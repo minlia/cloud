@@ -263,6 +263,14 @@
                 <!--<enabled>false</enabled>-->
             <!--</snapshots>-->
         <!--</repository>-->
+        <repository>
+            <id>osc-snapshots</id>
+            <name>OSC Snapshots</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
 
         <repository>
             <id>maven-releases</id>
@@ -282,14 +290,6 @@
         </repository>
 
 
-        <repository>
-            <id>osc-snapshots</id>
-            <name>OSC Snapshots</name>
-            <url>http://maven.oschina.net/content/groups/public/</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
-        </repository>
 
 
         <repository>
@@ -311,14 +311,14 @@
     </repositories>
     <pluginRepositories>
 
-        <!--<pluginRepository>-->
-            <!--<id>osc-releases</id>-->
-            <!--<name>OSC Releases</name>-->
-            <!--<url>http://maven.oschina.net/content/groups/public/</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>false</enabled>-->
-            <!--</snapshots>-->
-        <!--</pluginRepository>-->
+        <pluginRepository>
+            <id>osc-releases</id>
+            <name>OSC Releases</name>
+            <url>http://maven.oschina.net/content/groups/public/</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
 
 
         <pluginRepository>
